@@ -54,16 +54,16 @@ const renderPlayer = () => {
 }
 
 const renderEnemies = () => {
-    for (let enemy of enemies) {
-      const {x, y, vy, size, color} = enemy
-      ctx.fillStyle = color
-      ctx.fillRect(x, y, size, size)
-      enemy.y += vy
-      if (enemy.y > canvasSize - enemy.size) {
-        const {x, y} = getRandomPosition(enemy.size)
-        enemy.x = x
-        enemy.y = y
-        if (Math.random() < .1) enemies.push(Enemy())
+  for (let enemy of enemies) {
+    const {x, y, vy, size, color} = enemy
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, size, size)
+    enemy.y += vy
+    if (enemy.y > canvasSize - enemy.size) {
+      const {x, y} = getRandomPosition(enemy.size)
+      enemy.x = x
+      enemy.y = y
+      if (Math.random() < .1) enemies.push(Enemy())
     }
   }
 }
