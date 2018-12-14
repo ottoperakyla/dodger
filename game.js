@@ -12,9 +12,9 @@ const player = {
 }
 const random = (from, to) => Math.random() * to + from
 const enemies = []
-const isCollision = (object, randomPosition) => {
-  const horizontalCollision = object.x < randomPosition.x + randomPosition.size && object.x + object.size > randomPosition.x
-  const verticalCollision = object.y < randomPosition.y + randomPosition.size && object.size + object.y > randomPosition.y
+const isCollision = (objectA, objectB) => {
+  const horizontalCollision = objectA.x < objectB.x + objectB.size && objectA.x + objectA.size > objectB.x
+  const verticalCollision = objectA.y < objectB.y + objectB.size && objectA.size + objectA.y > objectB.y
   return horizontalCollision && verticalCollision
 }
 const getRandomPosition = size => {
